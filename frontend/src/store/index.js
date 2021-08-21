@@ -3,12 +3,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import coursesSlice from "./slices/coursesSlice";
 import tutorsSlice from "./slices/tutorsSlice";
+import securitySlice from './slices/securitySlice';
 
 export const store = configureStore({
   reducer: {
+      security: securitySlice,
       courses: coursesSlice,
       tutors: tutorsSlice
   },
+  devTools: true 
+  // devTools: process.env.NODE_ENV !== 'production', (Deshabilitar para produccion)
 });
 
 /*
