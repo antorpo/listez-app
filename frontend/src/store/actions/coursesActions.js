@@ -6,6 +6,13 @@ export const obtenerCursos = () => {
   return ejecutarConTry(async (dispatch, getState) => {
     const cursosEjemplo = ["Matematicas", "Fisica", "Calculo"];
     dispatch(getCourses(cursosEjemplo));
+    dispatch(
+      showAlert({
+        open: true,
+        type: "success",
+        message: "Cursos agregados correctamente!",
+      })
+    );
   });
 };
 

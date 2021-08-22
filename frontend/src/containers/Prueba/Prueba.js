@@ -6,6 +6,7 @@ import {
   generarError,
   generarAlerta
 } from "../../store/actions/coursesActions";
+import {showLoading} from '../../store/slices/securitySlice'
 
 export const Prueba = (props) => {
   const cursos = useSelector((state) => state.courses.coursesList);
@@ -23,6 +24,10 @@ export const Prueba = (props) => {
   const handleClickGenerarAlerta = () => {
     dispatch(generarAlerta(texto));
   }
+
+  const handleClickShowLoading = () => {
+    dispatch(showLoading(true))
+  }
   
   useEffect(() => {
     console.log("Prueba cursos:", cursos);
@@ -35,6 +40,7 @@ export const Prueba = (props) => {
       <button onClick={handleClickGenerarError}>Generar Error</button>
       <input type="text" value={texto} onChange={e => setTexto(e.target.value)} />
       <button onClick={handleClickGenerarAlerta}>Mostrar alerta</button>
+      <button onClick={handleClickShowLoading}>Mostrar Loader</button>
     </>
   );
 };
