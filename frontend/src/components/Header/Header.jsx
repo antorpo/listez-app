@@ -1,17 +1,18 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
+import { jsx } from "@emotion/core";
+import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
-import { container,image }from "./Header.styles"
+import { container, image } from "./Header.styles";
 
-function Header({rightElement}) {
-    return(
-        <div css={container}>
-            <div css={image}>
-                <img src={Logo} alt="logo listez app" loading="lazy"></img>
-            </div>
-            {rightElement}
-        </div>
-    )
-}
-
-export default Header
+export const Header = ({ rightElement }) => {
+  return (
+    <div css={container}>
+      <div css={image}>
+        <Link to="/">
+          <img src={Logo} alt="logo listez app" loading="lazy"></img>
+        </Link>
+      </div>
+      {rightElement}
+    </div>
+  );
+};
