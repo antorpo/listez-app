@@ -17,7 +17,7 @@ const App = (props) => {
   const handleCloseModal = () => {
     props.mostrarModal({open: false, content: null});
   };
-
+ 
   const contenido = (
     <>
     <h1>Antonio</h1>
@@ -42,21 +42,6 @@ const App = (props) => {
     </Router>
   );
 };
-
-/*
-  return (
-    <Router>
-      <Loader loading={loader} />
-      <Alert {...alert} handleClose={handleCloseAlert} />
-      <Switch>
-        <Route exact path="/" component={Main} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={SignIn} />
-        <Route path="*" component={NotFound} />
-      </Switch>
-    </Router>
-  );
-*/
 
 const mapStateToProps = (state) => {
   return {
