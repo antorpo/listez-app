@@ -7,6 +7,10 @@ const initialState = {
     message: "",
   },
   loading: false,
+  modal: {
+    open: true,
+    content: null
+  },
 };
 
 const securitySlice = createSlice({
@@ -19,9 +23,12 @@ const securitySlice = createSlice({
     showAlert(state, action) {
       state.alert = action.payload;
     },
+    showModal(state, action) {
+      state.modal = action.payload;
+    }
   },
 });
 
-export const { showLoading, showAlert } = securitySlice.actions;
+export const { showLoading, showAlert, showModal } = securitySlice.actions;
 
 export default securitySlice.reducer;
