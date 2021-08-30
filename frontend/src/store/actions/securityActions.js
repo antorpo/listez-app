@@ -1,5 +1,5 @@
 import { ejecutarConTry } from "./baseAction";
-import { showAlert, showModal } from "../slices/securitySlice";
+import { showAlert } from "../slices/securitySlice";
 
 export const mostrarAlerta = (alert) => {
   return ejecutarConTry(async (dispatch, getState) => {
@@ -13,11 +13,3 @@ export const mostrarAlerta = (alert) => {
   });
 };
 
-export const mostrarModal = (modal) => {
-  return ejecutarConTry(async (dispatch, getState) => {
-    dispatch(showModal({
-      open: modal.open,
-      content: modal.content
-    }));
-  });
-};
