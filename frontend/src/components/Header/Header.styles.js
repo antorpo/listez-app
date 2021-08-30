@@ -1,20 +1,29 @@
 import { css } from "@emotion/core";
+import { colors } from "../../utils/colors";
 import { breakpoints } from "../../utils/breakpoints";
 
 export const container=css`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     position:absolute;
     top:0;
     left: 0px;
     width: 100%;
     height: 60px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    @media(${breakpoints.mobile }){
+    background-color: ${colors.white};
+    z-index: 3;
+    @media(${breakpoints.tablet }){
         height: 70px;
         padding: 0 70px;
     }
+`;
+
+export const elementCss=css`
+    width: 100%;
+    max-width: ${breakpoints.maxWidthWindow};
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `;
 
 export const image=css`
@@ -26,7 +35,7 @@ export const image=css`
     & img{
         height: 65px;
     }
-    @media(${breakpoints.mobile }){
+    @media(${breakpoints.tablet }){
         width: 110px;
         height: 80px;
         display: flex;

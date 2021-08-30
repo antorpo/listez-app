@@ -1,12 +1,12 @@
 import {css} from "@emotion/core"
-import { fontFamilies } from "../../../utils/fontFamilies"
-import { colors } from "../../../utils/colors"
-import { breakpoints } from "../../../utils/breakpoints";
+import { fontFamilies } from "../../../../utils/fontFamilies"
+import { colors } from "../../../../utils/colors"
+import { breakpoints } from "../../../../utils/breakpoints";
 
 export const container=css`
     display: flex;
     margin: 95px 20px 25px;
-    @media(${breakpoints.mobile }){
+    @media(${breakpoints.tablet }){
         margin: 70px 70px 25px;
         justify-content: space-between;
     } 
@@ -17,7 +17,7 @@ export const title=css`
     font-weight: bold;
     font-size: 28px;
     color: ${colors.primary}; 
-    @media(${breakpoints.mobile }){
+    @media(${breakpoints.tablet }){
         font-size: 77px;
         margin-top: 20px;
     }   
@@ -29,7 +29,7 @@ export const text=css`
     font-size: 18px;
     margin: 6px 0;
     color: ${colors.gray.two};   
-    @media(${breakpoints.mobile }){
+    @media(${breakpoints.tablet }){
         font-size: 30px;
         margin: 30px 30px 30px 0;
     } 
@@ -46,7 +46,7 @@ export const button=css`
         background-color: ${colors.primary};
         border-radius: 5px;
         margin: 15px auto;
-        @media(${breakpoints.mobile }){
+        @media(${breakpoints.tablet }){
             height: 60px;
             padding: 15px;
         } 
@@ -58,14 +58,14 @@ export const buttonText=css`
     font-weight: normal;
     font-size: 18px;
     color: ${colors.white};
-    @media(${breakpoints.mobile }){
+    @media(${breakpoints.tablet }){
         font-size: 22px;
     } 
 `;
 
 export const image=css`
     display: none;
-    @media(${breakpoints.mobile }){
+    @media(${breakpoints.tablet }){
         display: block;
         width: 30%;
         height: auto;
