@@ -1,22 +1,31 @@
-import React from "react";
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
 import { Portal } from "../Portal/Portal";
-import "./styles.css";
+import {useState,useCallback} from "react"
+import {  } from "./Modal.styles";
 
-export const Modal = ({ divId, open, closeModal, content }) => {
-  if (!open) {
-    return null;
-  }
+export function useModal() {
+    const [open, setOpen] = useState(false);
 
+    const onClose = useCallback(() => {
+        setOpen(false);
+      }, [setOpen]);
+
+    return{
+        open,
+        onClose
+    }
+}
+
+const Modal = ({open, children }) => {
   return (
-    <Portal divId={divId}>
-      <div className="modal">
-        <div className="modal-content">
-          <span className="close" onClick={closeModal}>
-            &times;
-          </span>
-          <div className="content">{content}</div>
-        </div>
-      </div>
+    <Portal >
+        {open &&(
+            <div>"hh</div>
+        )}
+        {children}
     </Portal>
   );
 };
+
+export default Modal

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import men from "../../../assets/images/men.svg";
+import men from "../../../../assets/images/men.svg";
 import {
   containerCss,
   textContainerCss,

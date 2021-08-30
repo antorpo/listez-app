@@ -1,13 +1,16 @@
 import React from "react";
-import { Header, LoginButton } from "../components";
-import { FirstSection, SecondSection } from "../modules/Main";
+import { ContainerPage, Header, LoginButton } from "../components";
+import Footer from "../components/Footer/Footer";
+import { FirstSection, SecondSection,ThirdSection } from "../modules/Main/components";
 
 export const Main = () => {
   return (
-    <div>
+    <ContainerPage>
       <Header rightElement={<LoginButton />}></Header>
       <FirstSection />
       <SecondSection />
-    </div>
+      <ThirdSection/>
+      <Footer/>
+    </ContainerPage>
   );
 };

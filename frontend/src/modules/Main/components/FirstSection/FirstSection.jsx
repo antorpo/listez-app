@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { Link } from "react-router-dom";
-import women from "../../../assets/images/women.svg";
+import women from "../../../../assets/images/women.svg";
 import {
   container,
   title,
