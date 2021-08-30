@@ -2,7 +2,6 @@
 import { jsx } from "@emotion/core";
 import { Portal } from "../Portal/Portal";
 import {useState,useCallback} from "react"
-import {  } from "./Modal.styles";
 
 export function useModal() {
     const [open, setOpen] = useState(false);
