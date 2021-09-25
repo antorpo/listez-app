@@ -18,6 +18,7 @@ const App = (props) => {
     <Router>
       <Loader loading={props.loader} divId="loader" />
       <Alert {...props.alert} handleClose={handleCloseAlert} />
+      <div id="portals" />
       <Switch>
         {routes.map((route, i) => (
           <Route key={i} {...route} />
