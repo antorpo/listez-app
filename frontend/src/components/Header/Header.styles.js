@@ -3,7 +3,7 @@ import { colors } from "../../utils/colors";
 import { breakpoints } from "../../utils/breakpoints";
 
 export const container=css`
-    position:absolute;
+    position: fixed;;
     top:0;
     left: 0px;
     width: 100%;

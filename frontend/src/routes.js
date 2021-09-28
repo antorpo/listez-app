@@ -1,4 +1,4 @@
-import { Main, Login, SignIn, NotFound } from "./pages";
+import { Main, Login, SignIn, NotFound, TutorInformation } from "./pages";
 
 export const routes = [
   {
@@ -7,13 +7,18 @@ export const routes = [
     exact: true,
   },
   {
-    path: "/login",
+    path: "/IniciarSesion",
     component: Login,
     exact: true,
   },
   {
-    path: "/register",
+    path: "/Registro",
     component: SignIn,
+    exact: true,
+  },
+  {
+    path: "/InformacionTutor",
+    component: TutorInformation,
     exact: true,
   },
   {
@@ -21,4 +26,3 @@ export const routes = [
     component: NotFound,
   },
 ];
-

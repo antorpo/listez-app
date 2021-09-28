@@ -20,7 +20,7 @@ export const FirstSection = () => {
           Mejora en cada uno de tus conocimientos en los que presentas
           dificultades.
         </p>
-        <Link to="/register" css={button}>
+        <Link to="/Registro" css={button}>
           <div>
             <h2 css={buttonText}>UNETE DE FORMA GRATUITA</h2>
           </div>
