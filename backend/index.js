@@ -1,43 +1,59 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyparser = require('body-parser');
-require('dotenv').config()
-// HOLA
+const express = require("express");
+const mongoose = require("mongoose");
+
+require("dotenv").config();
 
 const app = express();
+const PORT = process.env.PORT || 3001;
 
 // capturar body
-app.use(bodyparser.urlencoded({ extended: false }));
-app.use(bodyparser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-// Conexión a Base de datos
-// Conexión a Base de datos
+// Conexion a Base de datos
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.1gm1o.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
-const option = { useNewUrlParser: true, useUnifiedTopology: true }
-mongoose.connect(uri, option)
-.then(() => console.log('Base de datos conectada'))
-.catch(e => console.log('error db:', e))
+const option = { useNewUrlParser: true, useUnifiedTopology: true };
+mongoose
+  .connect(uri, option)
+  .then(() => {
+    console.log("Base de datos conectada");
+    initial();
+  })
+  .catch((e) => console.log("error db:", e));
+
 // import routes
-const authRoutes = require('./routes/auth')
-const validaToken = require('./routes/validate-token')
-const dashboard = require('./routes/dashboard')
-
-
-
+const { authRoutes, testRoutes } = require("./routes");
 
 // route middlewares
-app.use('/api/user', authRoutes);
-app.use('/api/dashboard', validaToken, dashboard)
+app.use("/api/user", authRoutes);
+app.use("/api/dashboard", testRoutes);
 
-app.get('/', (req, res) => {
-    res.json({
-        estado: true,
-        mensaje: 'funciona!'
-    })
+app.get("/", (req, res) => {
+  res.json({
+    estado: true,
+    mensaje: "FUNCIONAL",
+  });
 });
 
-// iniciar server
-const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-    console.log(`servidor andando en: ${PORT}`)
-})
+  console.log(`SERVIDOR ANDANDO EN: ${PORT}`);
+});
+
+const db = require("./models");
+const Rol = db.rol;
+const initial = () => {
+  Rol.estimatedDocumentCount((err, count) => {
+    if (!err && count === 0) {
+      Rol.insertMany(
+        [{ nombre: "estudiante" }, { nombre: "tutor" }, { nombre: "admin" }],
+        (err) => {
+          if (err) {
+            console.error("Error", err);
+          }
+
+          console.log("Added to roles collection");
+        }
+      );
+    }
+  });
+};
