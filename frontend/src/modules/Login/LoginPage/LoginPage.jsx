@@ -16,18 +16,22 @@ import {
 export const LoginPage = () => {
   return (
     <div css={containerCss}>
-      <Card css={cardCss}>
-        <img src={Logo} alt="logo" css={logoCss} />
-        <h2 css={titleCss}>Iniciar Sesión</h2>
-        <Input placeholder="Correo electronico" css={inputCss} />
-        <Input placeholder="Contraseña" css={inputCss} />
-        <Button css={buttonCss}>
-          <h2>INICIAR SESIÓN</h2>
-        </Button>
-        <Link to="/Registro" css={linkCss}>
-          <h2>¿No tienes una cuenta? Registrate</h2>
-        </Link>
-      </Card>
+        <Card css={cardCss}>
+            <img src={Logo} alt="logo" css={logoCss}/>
+            <h2 css={titleCss}>Iniciar Sesión</h2>
+            <Input placeholder="Correo electronico" css={inputCss}/>
+            <Input placeholder="Contraseña" css={inputCss}/>
+            <Button css={buttonCss}>
+                <h2 >
+                    INICIAR SESIÓN
+                </h2>
+            </Button>
+            <Link to="/crearCuenta" css={linkCss}>
+                <h2 >
+                    ¿No tienes una cuenta? Registrate
+                </h2>
+            </Link>
+        </Card>
     </div>
   );
 };

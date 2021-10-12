@@ -1,4 +1,5 @@
-import { Main, Login, SignIn, NotFound, TutorInformation } from "./pages";
+
+import { Main, Login, SignIn, StudentHome, NotFound, TutorInformation } from "./pages";
 
 export const routes = [
   {
@@ -7,18 +8,18 @@ export const routes = [
     exact: true,
   },
   {
-    path: "/IniciarSesion",
+    path: "/iniciarSesion",
     component: Login,
     exact: true,
   },
   {
-    path: "/Registro",
+    path: "/crearCuenta",
     component: SignIn,
     exact: true,
   },
   {
-    path: "/InformacionTutor",
-    component: TutorInformation,
+    path: "/inicioEstudiante",
+    component: StudentHome,
     exact: true,
   },
   {

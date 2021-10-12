@@ -6,7 +6,7 @@ import { button, icon, text } from "./LoginButton.styles";
 
 export const LoginButton = () => {
   return (
-    <Link to="/IniciarSesion" css={button}>
+    <Link to="/iniciarSesion" css={button}>
       <img css={icon} src={login} alt="Iniciar sesion"></img>
       <h2 css={text}>Iniciar sesion</h2>
     </Link>
