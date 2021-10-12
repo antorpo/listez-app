@@ -22,7 +22,7 @@ const TutoriaSchema = mongoose.Schema({
             require: true
         }
     ],
-    estado: {
+    estado_solicitud: {
         type: Boolean,
         require: true
     },

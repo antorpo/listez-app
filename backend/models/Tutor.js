@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const TutorSchema = mongoose.Schema({
     _id: {
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'Usuario',
         require: true
     },
     descripcion: {
@@ -12,6 +13,7 @@ const TutorSchema = mongoose.Schema({
     oferta_cursos: [
         {
             type: mongoose.Schema.Types.ObjectId,
+            ref: 'Curso',
             require: true
         }
     ]
