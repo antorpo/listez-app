@@ -1,5 +1,6 @@
 import { ejecutarConTry } from "./baseAction";
-import { showAlert } from "../slices/securitySlice";
+import { showAlert, loginUser } from "../slices/securitySlice";
+import { login, register } from "../../services/auth.service";
 
 export const mostrarAlerta = (alert) => {
   return ejecutarConTry(async (dispatch, getState) => {
@@ -13,3 +14,18 @@ export const mostrarAlerta = (alert) => {
   });
 };
 
+export const loggearUsuario = (correo, password) => {
+  return ejecutarConTry(async (dispatch, getState) => {
+    const userCredentials = await login(correo, password);
+    console.log(userCredentials);
+
+    dispatch(loginUser(userCredentials));
+  });
+};
+
+export const registrarUsuario = (user) => {
+  return ejecutarConTry(async (dispatch, getState) => {
+    const respuesta = await register(user);
+    console.log(respuesta);
+  });
+};

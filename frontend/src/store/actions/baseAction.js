@@ -8,7 +8,7 @@ export const ejecutarConTry = (thunkFunction) => {
       await thunkFunction(dispatch, getState);
       // Ocultar loading
     } catch (error) {
-
+      console.log(error);
       dispatch(
         showAlert({
           open: true,

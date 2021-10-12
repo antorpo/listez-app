@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+var cors = require('cors');
 
 require("dotenv").config();
 
@@ -9,6 +10,13 @@ const PORT = process.env.PORT || 3001;
 // capturar body
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+var corsOptions = {
+  origin: true,
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 
 // Conexion a Base de datos
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.1gm1o.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;

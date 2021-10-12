@@ -11,12 +11,24 @@ const initialState = {
     open: true,
     content: null
   },
+  user: {
+    id: '',
+    nombre: '',
+    apellido: '',
+    correo: '',
+    documento_identidad: '',
+    roles: [],
+    accessToken: ''
+  }
 };
 
 const securitySlice = createSlice({
   name: "securityReducer",
   initialState,
   reducers: {
+    loginUser(state, action) {
+      state.user = action.payload;
+    },
     showLoading(state, action) {
       state.loading = action.payload;
     },
@@ -29,6 +41,6 @@ const securitySlice = createSlice({
   },
 });
 
-export const { showLoading, showAlert, showModal } = securitySlice.actions;
+export const { showLoading, showAlert, showModal, loginUser } = securitySlice.actions;
 
 export default securitySlice.reducer;
