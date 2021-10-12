@@ -3,35 +3,44 @@ const mongoose = require('mongoose');
 const TutoriaSchema = mongoose.Schema({
     id_tutor: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Usuario'
+        ref: 'Usuario',
+        require: false
     },
     id_estudiante: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Usuario'
+        ref: 'Usuario',
+        require: true
     },
     id_curso: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Curso'
+        ref: 'Curso',
+        require: true
     },
     fechas_agendamiento: [
         {
-            type: Date
+            type: Date,
+            require: true
         }
     ],
     estado: {
-        type: Boolean
+        type: Boolean,
+        require: true
     },
     fecha_solicitud: {
-        type: Date
+        type: Date,
+        require: true
     },
     info_encuentro: {
-        type: String
+        type: String,
+        require: true
     },
     fecha_concretada: {
-        type: Date
+        type: Date,
+        require: false
     },
     url: {
-        type: String
+        type: String,
+        require: false
     }
 })
 
