@@ -29,7 +29,10 @@ export const LoginPage = () => {
         <h2 css={titleCss}>Iniciar Sesión</h2>
         <Input placeholder="Correo electronico" css={inputCss} />
         <Input placeholder="Contraseña" css={inputCss} />
-        <Button css={buttonCss} onClick={() => loginUser('antonio@gmail.com', 'asdfg123')}>
+        <Button
+          css={buttonCss}
+          onClick={() => loginUser("antonio@gmail.com", "asdfg123")}
+        >
           <h2>INICIAR SESIÓN</h2>
         </Button>
         <Link to="/Registro" css={linkCss}>
