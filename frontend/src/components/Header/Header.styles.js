@@ -3,12 +3,12 @@ import { colors } from "../../utils/colors";
 import { breakpoints } from "../../utils/breakpoints";
 
 export const container=css`
-    position:absolute;
+    position: fixed;;
     top:0;
     left: 0px;
     width: 100%;
     height: 60px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     background-color: ${colors.white};
     z-index: 3;
     @media(${breakpoints.tablet }){

@@ -14,5 +14,5 @@ export const colors={
         six:"#EEEEEE"
     },
     white: "#FFFFFF",
-    
+    transparentBlack:"rgba(0, 0, 0, 0.2)"
 }

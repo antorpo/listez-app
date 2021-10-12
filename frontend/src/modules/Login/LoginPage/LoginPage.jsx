@@ -1,9 +1,17 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { Link } from "react-router-dom";
-import { Button, Card,Input } from "../../../components";
+import { Button, Card, Input } from "../../../components";
 import Logo from "../../../assets/images/logo.svg";
-import { containerCss,cardCss,logoCss,titleCss,inputCss,buttonCss, linkCss } from "./LoginPage.styles";
+import {
+  containerCss,
+  cardCss,
+  logoCss,
+  titleCss,
+  inputCss,
+  buttonCss,
+  linkCss,
+} from "./LoginPage.styles";
 
 export const LoginPage = () => {
   return (
@@ -18,7 +26,7 @@ export const LoginPage = () => {
                     INICIAR SESIÓN
                 </h2>
             </Button>
-            <Link to="/register" css={linkCss}>
+            <Link to="/crearCuenta" css={linkCss}>
                 <h2 >
                     ¿No tienes una cuenta? Registrate
                 </h2>
@@ -27,5 +35,3 @@ export const LoginPage = () => {
     </div>
   );
 };
-
-
