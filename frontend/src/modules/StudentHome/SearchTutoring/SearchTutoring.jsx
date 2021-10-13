@@ -1,10 +1,10 @@
 /** @jsx jsx */
+import { useState, useEffect } from "react"
 import { jsx } from "@emotion/core";
-import ListOfTutorials from "../ListOfTutorials/ListOfTutorials"
 import TutorCard from "./components/TutorCard/TutorCard"
 import {  } from "./SearchTutoring.styles"
 
-const tutores=[
+const tutoresMock=[
     {
         name:"Juanito Perez",
         description:"Soy estudiante de ingenieria quimica, soy una persona paciente y apasionada por la enseñanza",
@@ -14,8 +14,15 @@ const tutores=[
     }
 ]
 
-
 function SearchTutoring() {
+    
+    const[tutores, setTutors]=useState(tutoresMock)
+    useEffect(()=>{
+        //consumir endpoint que obtiene tutored
+        /*
+
+        */
+    })
     return (
         <div>
             {tutores.map((tutor)=>(

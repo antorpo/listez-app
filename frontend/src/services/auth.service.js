@@ -1,13 +1,13 @@
 import axios from "axios";
 import { APIBASE } from "./api";
 
-export const login = async (correo, password) => {
+export const login = async (userData, setAnswer) => {
   const response = await axios.post(`${APIBASE.endpoint}/user/login`, {
-    correo,
-    password,
+    ...userData
   });
-  const data = await response.data;
-  return data;
+  const userCredentials = await response.data;
+  const {statusText} = await response;
+  return {userCredentials, statusText};
 };
 
 export const register = async (user) => {

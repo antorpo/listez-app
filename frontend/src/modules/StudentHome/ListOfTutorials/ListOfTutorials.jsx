@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import { Link } from "react-router-dom";
-import { Button, Card,Input } from "../../../components";
+import { Button } from "../../../components";
 import dump from "../../../assets/images/icons/dump.svg";
 import { containerCss,titleRowCss,rowCss,buttonCss } from "./ListOfTutorials.styles"
 

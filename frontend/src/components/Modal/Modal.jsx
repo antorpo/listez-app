@@ -28,7 +28,7 @@ export function useModal() {
     }
 }
 
-const Modal = ({open, children,onClose }) => {
+const Modal = ({open, children, onClose }) => {
 
   function handlerClickClose(event) {
     event.stopPropagation();

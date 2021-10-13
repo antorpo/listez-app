@@ -19,8 +19,8 @@ export const cardCss=css`
     padding-bottom: 15px;
     @media(${breakpoints.tablet }){
         width: 520px;
-        height: 550px;
-        padding-bottom: 15px;
+        height: 575px;
+        padding-bottom: 5px;
     }
 `;
 
@@ -29,7 +29,7 @@ export const logoCss=css`
     width: 120px;
     margin-top: 15px;
     @media(${breakpoints.tablet }){
-        height: 120px;
+        height: 100px;
         width: 120px;
         margin-top: 20px;
         padding-left: 0;
@@ -49,10 +49,16 @@ export const inputCss=css`
         width: 250px;
     }
     @media(${breakpoints.tablet }){
-        margin: 10px 0;
+        margin: 0;
         & input{
             width: 380px;
         }
+    }
+`;
+
+export const inputContainerCss=css`
+    @media(${breakpoints.tablet }){
+        margin-bottom: 4px;
     }
 `;
 
@@ -65,6 +71,12 @@ export const buttonCss=css`
         font-weight: normal;
     }
     @media(${breakpoints.tablet }){
-        margin-top: 15px;
+        margin-top: 0px;
     }
+`;
+
+export const formCss=css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;

@@ -1,5 +1,7 @@
 import {css} from "@emotion/core"
 import styled from "@emotion/styled"
+import { breakpoints } from "../../utils/breakpoints";
+
 import { colors } from "../../utils/colors"
 
 export const ModalStyled=styled.div`
@@ -29,4 +31,10 @@ export const closeButtonCss=css`
     width: 20px;
     border-radius: 50%;
     background-color: ${colors.white};
+    @media(${breakpoints.tablet }){
+        top: 80px;
+        right: 15px;
+        height: 30px;
+        width: 30px;
+    }
 `;

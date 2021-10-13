@@ -43,6 +43,7 @@ export const inputCss=css`
         width: 250px;
     }
     @media(${breakpoints.tablet }){
+        margin: 5px  0;
         & input{
             width: 380px;
         }
@@ -77,4 +78,10 @@ export const linkCss=css`
             font-family: ${fontFamilies.primary};
         }
     }
+`;
+
+export const formCss=css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
