@@ -37,7 +37,7 @@ const UsuarioSchema = mongoose.Schema({
       ref: "Rol",
     },
   ],
-  tutorInfo: {
+  tutor_info: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Tutor',
   }
