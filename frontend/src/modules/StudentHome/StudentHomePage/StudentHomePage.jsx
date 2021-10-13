@@ -8,7 +8,7 @@ import { StyledButton, containerCss } from "./StudentHomePage.styles"
 
 
 
-function StudentHomePage({onToggleModal}) {
+function StudentHomePage() {
   const [optionActive, setOptionActive]=useState(1)
     return (
     <div >
