@@ -1,7 +1,10 @@
 /** @jsx jsx */
+import PropTypes from 'prop-types';
 import { jsx } from "@emotion/core";
-import { Link } from "react-router-dom";
-import { Button, Card,Input } from "../../../../../components";
+import { Button, Card } from "../../../../../components";
+import Modal, { useModal } from "../../../../../components/Modal";
+import usuario from "../../../../../assets/images/usuario.png";
+import RequestTutoring from './RequestTutoring/RequestTutoring';
 import { 
     containerCss,
     cardCss,
@@ -9,24 +12,56 @@ import {
     nameCss,
     descriptionCss,
     coursesCss,
-    buttonCss
- } from "./TutorCard.styles"
+    buttonCss,
+    modalCss
+ } from "./TutorCard.styles";
 
-
-function TutorCard({photo, name,description,courses}) {
+function TutorCard({id, photo, name, description, courses}) {
+    const { open, onToggle,onClose } = useModal();
+    const handleClick=()=>{
+        onToggle();
+    }
     return (
         <div css={containerCss}>
             <Card css={cardCss}>
-                <div css={photoCss}></div>
+                <div css={photoCss}>
+                    {photo  || (
+                        <img src={usuario} alt="usuario"/>
+                    )}
+                </div>
                 <h2 css={nameCss}>{name}</h2>
                 <p css={descriptionCss}>{description}</p>
                 <h3 css={coursesCss }>{courses}</h3>
-                <Button css={buttonCss}>Solicitar tutoria</Button>
+                <Button onClick={handleClick} css={buttonCss}>Solicitar tutoria</Button>
             </Card>
-        </div>
-    
+            {open && (
+                <Modal
+                    open={open}
+                    onClose={onClose}
+                    css={modalCss}
+                >
+                  <RequestTutoring idTutor={id}/>
+                </Modal>
+            )}
+        </div> 
   );
 }
+
+TutorCard.propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    photo: PropTypes.string,
+    courses: PropTypes.string,
+};
+
+TutorCard.defaultProps = {
+    id:"",
+    name: "Nombre Tutor",
+    description: "descripción descripción descripción descripción descripción",
+    photo:"",
+    courses: "Matematica, español"
+};
 
 export default TutorCard
 

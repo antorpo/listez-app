@@ -1,6 +1,10 @@
 import { css } from "@emotion/core";
 import { colors } from "../../../../../utils/colors";
 
+export const modalCss=css`
+
+`;
+
 export const containerCss=css`
     height: 300px;
     width: min-content;
@@ -17,12 +21,16 @@ export const cardCss=css`
 `;
 
 export const photoCss=css`
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     position: absolute;
-    top: -30px;
-    background-color: rebeccapurple;
+    top: -35px;
+    box-shadow: 0px 4px 5px rgb(0 0 0 / 15%);
+    background-color: ${colors.gray.six};
+    & img{
+        height: 90px;
+    }
 `;
 
 export const nameCss=css`
@@ -49,5 +57,6 @@ export const buttonCss=css`
     padding: 10px;
     height: 35px;
     margin-top: 20px;
+    color: white;
 `;
 

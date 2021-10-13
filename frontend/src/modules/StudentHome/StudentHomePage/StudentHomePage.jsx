@@ -1,9 +1,6 @@
 /** @jsx jsx */
 import { useState } from "react";
 import { jsx } from "@emotion/core";
-import { Link } from "react-router-dom";
-import { Button, Card,Input } from "../../../components";
-import Logo from "../../../assets/images/logo.svg";
 import SideMenu from "../../../components/SideMenu/SideMenu"
 import InformationTutorials from "../InformationTutorials/InformationTutorials"
 import SearchTutoring from "../SearchTutoring/SearchTutoring"
@@ -11,7 +8,7 @@ import { StyledButton, containerCss } from "./StudentHomePage.styles"
 
 
 
-function StudentHomePage() {
+function StudentHomePage({onToggleModal}) {
   const [optionActive, setOptionActive]=useState(1)
     return (
     <div >
