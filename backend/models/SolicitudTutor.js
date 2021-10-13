@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const solicitudTutorSchema = mongoose.Schema({
-    id_usuario: {
+    usuario: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Usuario',
         require: true
@@ -10,7 +10,7 @@ const solicitudTutorSchema = mongoose.Schema({
         type: String,
         require: true
     },
-    id_curso_a_ofertar: {
+    curso_a_ofertar: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Curso',
         require: true

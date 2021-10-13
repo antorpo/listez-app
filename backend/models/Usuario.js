@@ -13,10 +13,6 @@ const UsuarioSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  roles: {
-    type: Array,
-    required: true,
-  },
   correo: {
     type: String,
     required: true,
@@ -25,11 +21,13 @@ const UsuarioSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  id_tutorias: {
-    type: Array,
-    required: false,
-  },
-  id_cursos_asociados: {
+  tutorias: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Tutoria',
+    }
+  ],
+  cursos_asociados: {
     type: Array,
     required: false,
   },
@@ -39,6 +37,10 @@ const UsuarioSchema = mongoose.Schema({
       ref: "Rol",
     },
   ],
+  tutorInfo: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Tutor',
+  }
 });
 
 module.exports = mongoose.model("Usuario", UsuarioSchema);

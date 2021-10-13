@@ -1,11 +1,6 @@
 const mongoose = require('mongoose')
 
 const TutorSchema = mongoose.Schema({
-    _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Usuario',
-        require: true
-    },
     descripcion: {
         type: String,
         require: true
@@ -17,7 +12,6 @@ const TutorSchema = mongoose.Schema({
             require: true
         }
     ]
-
 })
 
 module.exports = mongoose.model('Tutor', TutorSchema)

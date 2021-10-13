@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-var cors = require('cors');
+var cors = require("cors");
 
 require("dotenv").config();
 
@@ -13,10 +13,19 @@ app.use(express.json());
 
 var corsOptions = {
   origin: true,
-  credentials: true
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
+
+app.use((req, res, next) => {
+  res.header(
+    "Access-Control-Allow-Headers",
+    "x-access-token, Origin, Content-Type, Accept"
+  );
+
+  next();
+});
 
 // Conexion a Base de datos
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.1gm1o.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
@@ -30,11 +39,13 @@ mongoose
   .catch((e) => console.log("error db:", e));
 
 // import routes
-const { authRoutes, testRoutes } = require("./routes");
+const { authRoutes, testRoutes, tutorRoutes } = require("./routes");
 
-// route middlewares
+// routes
 app.use("/api/user", authRoutes);
 app.use("/api/dashboard", testRoutes);
+app.use("/api/tutorias", tutorRoutes)
+
 
 app.get("/", (req, res) => {
   res.json({
@@ -49,6 +60,7 @@ app.listen(PORT, () => {
 
 const db = require("./models");
 const Rol = db.rol;
+
 const initial = () => {
   Rol.estimatedDocumentCount((err, count) => {
     if (!err && count === 0) {

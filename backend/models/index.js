@@ -7,5 +7,6 @@ db.solicitud_tutor = require('./SolicitudTutor');
 db.estado = require('./Estado');
 db.curso = require('./Curso');
 db.ROLES = ["estudiante", "tutor", "admin"];
+db.ESTADOS = ["pendiente", "aceptado", "pasado"]
 
 module.exports = db;
