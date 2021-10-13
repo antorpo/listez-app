@@ -66,10 +66,16 @@ findTutoriasPorEstado = (req, res) => {
 };
 
 findAllTutores = (req, res) => {
-  const { id_rol } = req.body;
-
-  Estudiante.find({ roles: id_rol })
-    .populate("roles", "tutor_info", "tutorias", "-__v")
+  Estudiante.find({ roles: "616380a1b1c2b5b8e760d368" })
+    .populate([
+      "roles",
+      {
+        path: 'tutor_info',
+        populate: {
+          path: 'oferta_cursos'
+        }
+      }
+    ])
     .exec((err, tutores) => {
       if (err) {
         return res.status(500).json({ error: true, mensaje: err });
@@ -81,7 +87,15 @@ findAllTutores = (req, res) => {
 
 findTutorById = (req, res) => {
   const { id_tutor } = req.body;
-  Estudiante.findById(id_tutor).exec((err, tutor) => {
+  Estudiante.findById(id_tutor).populate([
+    "roles",
+    {
+      path: 'tutor_info',
+      populate: {
+        path: 'oferta_cursos'
+      }
+    }
+  ]).exec((err, tutor) => {
     if (err) {
       res.status(500).json({ error: true, mensaje: err });
       return;

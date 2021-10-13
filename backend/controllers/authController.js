@@ -24,19 +24,13 @@ signIn = async (req, res) => {
         process.env.TOKEN_SECRET
       );
 
-      var roles = [];
-
-      for (let i = 0; i < user.roles.length; i++) {
-        roles.push("ROL_" + user.roles[i].nombre.toUpperCase());
-      }
-
       res.status(200).send({
         id: user._id,
         nombre: user.nombre,
         apellido: user.apellido,
         correo: user.correo,
         documento_identidad: user.documento_identidad,
-        roles,
+        roles: user.roles,
         accessToken: token,
       });
 
