@@ -26,4 +26,9 @@ router.get(
   testController.adminBoard
 );
 
+
+
+
+router.get("/student/tutores", [authJwt.verifyToken], testController.tutoresList);
+
 module.exports = router;
